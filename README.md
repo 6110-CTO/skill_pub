@@ -13,27 +13,16 @@
 curl -O https://raw.githubusercontent.com/6110-CTO/skill_pub/main/CLAUDE.md
 ```
 
-### 2. Clone only the skill you need
+### 2. Pull and extract the skill
 ```bash
-git clone --depth=1 --filter=blob:none --sparse https://github.com/6110-CTO/skill_pub.git tmp-skills
-```
-
-### 3. Extract and place it
-```bash
-mkdir -p skills
-mv tmp-skills/<skill-name>.skill skills/
-cd skills
+mkdir -p skills && cd skills
+curl -L -O https://github.com/6110-CTO/skill_pub/raw/main/<skill-name>.skill
 unzip <skill-name>.skill
 rm <skill-name>.skill
 cd ..
 ```
 
-### 4. Clean up
-```bash
-rm -rf tmp-skills
-```
-
-### 5. Verify
+### 3. Verify
 ```bash
 find skills
 ```
@@ -42,7 +31,7 @@ Expected output:
 skills/<skill-name>/SKILL.md
 ```
 
-### 6. Commit
+### 4. Commit
 ```bash
 git add .
 git commit -m "add <skill-name> skill"
