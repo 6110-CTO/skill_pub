@@ -49,12 +49,19 @@ Expected output:
 skills/<skill-name>/SKILL.md
 ```
 
+Verify the trigger:
+```
+I want to set up a production-ready MLOps project environment from scratch. Where do I start?
+```
+
 ### 7. Commit
 ```bash
 git add .
 git commit -m "add <skill-name> skill"
 git push
 ```
+
+
 
 ---
 
